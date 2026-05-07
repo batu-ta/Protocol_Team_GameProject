@@ -35,7 +35,7 @@
 
 **I.**	**Win Scenarios:** The player eliminates all kinds of enemies that come their way and reaches the finale, achieving their goal.
 
-===================================================================================
+============================================================================
 
 **II.**	**Loss Scenarios:** As the player progresses, waves of enemies give damage and kill them. The player dies while fighting the final boss. The game restarts from where it left off.
 
