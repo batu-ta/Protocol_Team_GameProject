@@ -2468,6 +2468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9508df483ba77546a231b72d3ac30d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
+  pausePanel: {fileID: 0}
 --- !u!4 &1522622537
 Transform:
   m_ObjectHideFlags: 0
@@ -2525,6 +2526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936eac05cc02c4526976917c5065bd17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GirisVideosu
+  videoPlayer: {fileID: 0}
+  videoPaneli: {fileID: 0}
+  oyunSahneAdi: Outside
 --- !u!328 &1912392587
 VideoPlayer:
   m_ObjectHideFlags: 0
