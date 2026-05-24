@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: ac90cbd9f9a84f04aac966a16ac33505
+  productGUID: f7295b4e08dc5a640801ec9e9c9e659d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Protocol_1978
+  productName: My project (4)
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -296,7 +296,10 @@ PlayerSettings:
   androidSymbolsSizeThreshold: 800
   m_BuildTargetIcons: []
   m_BuildTargetPlatformIcons: []
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: Standalone
+    m_StaticBatching: 1
+    m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
@@ -604,14 +607,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Protocol_1978
+  metroPackageName: My project (4)
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Protocol_1978
+  metroApplicationDescription: My project (4)
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -682,10 +685,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: e25254fa-6a86-4a1b-ad49-85eeb6a4e81f
+  cloudProjectId: 3dd16473-8e7c-4c5f-969d-78e3e035aa1a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Protocol_1978
+  projectName: My project (4) 2026-03-26_14-06-25
   organizationId: batwokan
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
