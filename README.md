@@ -25,6 +25,7 @@
 * Using some items to keep moving.
 
 ### 4) Controls
+
 * WASD Player Controllers
   
 * F button for torch
