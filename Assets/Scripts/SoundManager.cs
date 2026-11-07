@@ -1,22 +1,22 @@
 using UnityEngine;
-using UnityEngine.Audio; // Mixer için şart
-using UnityEngine.UI;    // Slider için şart
+using UnityEngine.Audio; // Mixer iÃ§in ÅŸart
+using UnityEngine.UI;    // Slider iÃ§in ÅŸart
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioMixer mainMixer; // Inspector'dan Mixer'ı buraya sürükle
-    public Slider musicSlider;   // Senin o mor slider'ı buraya sürükle
+    public AudioMixer mainMixer; // Inspector'dan Mixer'Ä± buraya sÃ¼rÃ¼kle
+    public Slider musicSlider;   // Senin o mor slider'Ä± buraya sÃ¼rÃ¼kle
 
     void Start()
     {
-        // Oyun açıldığında slider'ın değerini mixer'a eşitle
+        // Oyun aÃ§Ä±ldÄ±ÄŸÄ±nda slider'Ä±n deÄŸerini mixer'a eÅŸitle
         SetVolume(musicSlider.value);
     }
 
     public void SetVolume(float sliderValue)
     {
-        // Audio Mixer -80 ile 20 arası çalışır. 
-        // Log10 kullanarak sesi kulağa daha doğal gelecek şekilde ayarlıyoruz.
+        // Audio Mixer -80 ile 20 arasÄ± Ã§alÄ±ÅŸÄ±r. 
+        // Log10 kullanarak sesi kulaÄŸa daha doÄŸal gelecek ÅŸekilde ayarlÄ±yoruz.
         mainMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
     }
 }

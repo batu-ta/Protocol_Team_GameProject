@@ -49,13 +49,14 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1")) { anim.SetTrigger("AtesEt"); }
 
+#if UNITY_EDITOR
+        // Sadece editörde: K ile ölüm ekranını test et. Oyunun derlenmiş sürümünde çalışmaz.
         if (Input.GetKeyDown(KeyCode.K))
         {
-            oluMu = true;
-            anim.SetBool("Olu", true);
-            rb.linearVelocity = Vector2.zero; // Unity 6 öncesi için rb.velocity
+            OlumYoneticisi.OyuncuOldu("test_k");
             return;
         }
+#endif
 
         YonuCevir();
 
@@ -77,6 +78,15 @@ public class PlayerController2D : MonoBehaviour
         {
             rb.linearVelocity = hareketGirdisi * geciciHiz; // Unity 6 altındaysanız rb.velocity = hareketGirdisi * geciciHiz; kullanın
         }
+    }
+
+    // Ölüm anında OlumYoneticisi çağırır: kontrol kilitlenir, ölüm animasyonu oynar.
+    public void Oldur()
+    {
+        if (oluMu) return;
+        oluMu = true;
+        if (anim != null) anim.SetBool("Olu", true);
+        if (rb != null) rb.linearVelocity = Vector2.zero;
     }
 
     private void YonuCevir()

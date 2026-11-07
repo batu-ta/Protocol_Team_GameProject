@@ -1,30 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; // Tıklama olaylarını algılamak için gerekli
+using UnityEngine.EventSystems; // TÄ±klama olaylarÄ±nÄ± algÄ±lamak iÃ§in gerekli
 
 public class ButtonGlowHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    // Buraya sahnedeki "ButtonGlow" objesini sürükleyip bırakacağız.
+    // Buraya sahnedeki "ButtonGlow" objesini sÃ¼rÃ¼kleyip bÄ±rakacaÄŸÄ±z.
     public GameObject glowObject;
 
     void Start()
     {
-        // Oyun başladığında ışık kapalı olsun.
+        // Oyun baÅŸladÄ±ÄŸÄ±nda Ä±ÅŸÄ±k kapalÄ± olsun.
         if (glowObject != null)
             glowObject.SetActive(false);
     }
 
-    // Fareyle butona tıklandığı an (basılı tutulurken)
+    // Fareyle butona tÄ±klandÄ±ÄŸÄ± an (basÄ±lÄ± tutulurken)
     public void OnPointerDown(PointerEventData eventData)
     {
         if (glowObject != null)
-            glowObject.SetActive(true); // Işığı aç
+            glowObject.SetActive(true); // IÅŸÄ±ÄŸÄ± aÃ§
     }
 
-    // Fare tıkı bırakıldığı an
+    // Fare tÄ±kÄ± bÄ±rakÄ±ldÄ±ÄŸÄ± an
     public void OnPointerUp(PointerEventData eventData)
     {
         if (glowObject != null)
-            glowObject.SetActive(false); // Işığı kapat
+            glowObject.SetActive(false); // IÅŸÄ±ÄŸÄ± kapat
     }
 }

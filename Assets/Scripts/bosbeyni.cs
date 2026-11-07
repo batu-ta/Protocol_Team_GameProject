@@ -82,7 +82,7 @@ public class bossbeyni : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            OlumYoneticisi.OyuncuOldu("boss");
         }
     }
 
