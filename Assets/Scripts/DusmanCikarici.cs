@@ -6,13 +6,15 @@ public class DusmanCikarici : MonoBehaviour
     public GameObject dusmanPrefab;
     public Transform[] noktalar; // Sahneye koyduğun o boş objeleri buraya sürükle
     public float uretimHizi = 2f;
+    [Tooltip("Sahne açıldıktan sonra ilk düşman kaç saniye sonra doğsun (oyuncuya nefes payı).")]
+    public float ilkGecikme = 3f;
     public float guvenliMesafe = 10f; // Oyuncu bu mesafeden yakınsa o noktada doğmasınlar
     public Transform oyuncu;
 
     void Start()
     {
         // Oyun başlar başlamaz "Uret" fonksiyonunu periyodik olarak çağırmaya başlar
-        InvokeRepeating("Uret", 0f, uretimHizi);
+        InvokeRepeating("Uret", ilkGecikme, uretimHizi);
     }
 
     void Uret()

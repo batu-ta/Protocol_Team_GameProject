@@ -1,14 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne geçişi için lazım
+using UnityEngine.SceneManagement; // Sahne geÃ§iÅŸi iÃ§in lazÄ±m
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject pausePanel; // Inspector'dan PausePanel'i buraya sürükleyeceğiz
+    public GameObject pausePanel; // Inspector'dan PausePanel'i buraya sÃ¼rÃ¼kleyeceÄŸiz
     private bool isPaused = false;
 
     void Update()
     {
-        // ESC tuşuna basıldığında
+        // ESC tuÅŸuna basÄ±ldÄ±ÄŸÄ±nda
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused) ResumeGame();
@@ -18,21 +18,21 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame()
     {
-        pausePanel.SetActive(true); // Menüyü göster
-        Time.timeScale = 0f;       // Zamanı durdur
+        pausePanel.SetActive(true); // MenÃ¼yÃ¼ gÃ¶ster
+        Time.timeScale = 0f;       // ZamanÄ± durdur
         isPaused = true;
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false); // Menüyü gizle
-        Time.timeScale = 1f;        // Zamanı akıt
+        pausePanel.SetActive(false); // MenÃ¼yÃ¼ gizle
+        Time.timeScale = 1f;        // ZamanÄ± akÄ±t
         isPaused = false;
     }
 
     public void MainMenu()
     {
-        Time.timeScale = 1f; // Zamanı düzeltmeyi unutma
-        SceneManager.LoadScene("MainMenuScene"); // Sahne adını buraya yaz
+        Time.timeScale = 1f; // ZamanÄ± dÃ¼zeltmeyi unutma
+        SceneManager.LoadScene("Menu"); // Ana menÃ¼ sahnesi
     }
 }

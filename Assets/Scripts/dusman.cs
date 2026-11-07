@@ -12,10 +12,17 @@ public class SuzulenDusman : MonoBehaviour
     public float dalgaBuyuklugu = 1f; // Ne kadar genişten alacağı
     private float rastgeleZamanFarki; // Hepsi aynı anda aynı yöne dönmesin diye fark
 
+    [Header("Uyanma")]
+    [Tooltip("Düşman sahneye geldikten sonra harekete geçmeden önce kaç saniye bekler (oyuncuya nefes payı).")]
+    public float uyanmaSuresi = 1.5f;
+    private float dogumZamani;
+
     private Transform playerTransform;
 
     void Start()
     {
+        dogumZamani = Time.time;
+
         // 1. HİZ FARKI: Her canavar doğduğunda temel hızının üzerine çok ufak bir yavaşlık/hızlanır ekleriz (-0.5 ile +0.5 arası)
         // Böylece aynı anda doğsalar bile zamanla biri diğerini geçer, sıra bozulur.
         gercekHiz = temelHiz + Random.Range(-0.5f, 0.5f);
@@ -32,6 +39,7 @@ public class SuzulenDusman : MonoBehaviour
 
     void Update()
     {
+        if (Time.time < dogumZamani + uyanmaSuresi) return;
         if (playerTransform != null)
         {
             // A - Karakterimize doğru giden ana, DÜZ istikametimiz (Yön)
@@ -58,8 +66,8 @@ public class SuzulenDusman : MonoBehaviour
         // Düşmana hasar verme kodumuz (Bu kısmı oyunu yeniden başlatmak yerine önceki verdiğim "HasarAl" koduyla değiştirebilirsiniz)
         if (collision.gameObject.CompareTag("Player"))
         {
-            Scene activeScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(activeScene.name);
+            // Ölüm ekranı, sayaç ve yeniden başlatma OlumYoneticisi'nde.
+            OlumYoneticisi.OyuncuOldu("dusman");
         }
     }
 }
